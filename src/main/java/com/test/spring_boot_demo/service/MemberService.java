@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.test.spring_boot_demo.domain.dao.MemberDao;
+import com.test.spring_boot_demo.domain.dao.Member;
 import com.test.spring_boot_demo.domain.dto.MemberDto;
 import com.test.spring_boot_demo.domain.dto.RegistMemberDto;
 import com.test.spring_boot_demo.domain.dto.UpdateMemberDto;
@@ -31,7 +31,7 @@ public class MemberService {
 
     // 특정 유저 조회
     public MemberDto getMember(Long id) {
-        MemberDao memberDao = memberRepository.getMember(id);
+        Member memberDao = memberRepository.getMember(id);
         if(memberDao == null) {
             log.error("getMember 조회 결과: null");
             throw new CustomException(MemberExceptionType.MEMBER_NOT_FOUND);

@@ -20,7 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestControllerAdvice
 @Slf4j
 public class CustomExceptionHandler {
-    @ExceptionHandler(CustomException.class)
+  @ExceptionHandler(CustomException.class)
   public ResponseEntity<String> handleCustomException(CustomException ex) {
     return ResponseEntity.status(ex.getExceptionType().status()).body(ex.getMessage());
   }

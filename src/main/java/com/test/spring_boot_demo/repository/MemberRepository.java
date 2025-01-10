@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.test.spring_boot_demo.domain.dao.MemberDao;
+import com.test.spring_boot_demo.domain.dao.Member;
 import com.test.spring_boot_demo.domain.dto.RegistMemberDto;
 import com.test.spring_boot_demo.domain.dto.UpdateMemberDto;
 import com.test.spring_boot_demo.mapper.MemberMapper;
@@ -20,12 +20,12 @@ public class MemberRepository {
     private final MemberMapper memberMapper;
 
     // 전체 유저 조회
-    public List<MemberDao> getMemberList() {
+    public List<Member> getMemberList() {
         return memberMapper.getMemberList();
     }
 
     // 특정 유저 조회
-    public MemberDao getMember(Long id) {
+    public Member getMember(Long id) {
         return memberMapper.getMember(id);
     }
 

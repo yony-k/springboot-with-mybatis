@@ -10,15 +10,15 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class MemberDao {
+public class Member {
     private long id;
     private String name;
     private int age;
     private String email;
     private String phone;
 
-    public static MemberDao toMemberDao(MemberDto memberDto) {
-        return new MemberDao().builder()
+    public static Member toMemberDao(MemberDto memberDto) {
+        return new Member().builder()
         .id(memberDto.getId())
         .name(memberDto.getName())
         .age(memberDto.getAge())

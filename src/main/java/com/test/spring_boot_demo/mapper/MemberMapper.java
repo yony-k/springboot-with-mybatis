@@ -3,7 +3,7 @@ package com.test.spring_boot_demo.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.*;
-import com.test.spring_boot_demo.domain.dao.MemberDao;
+import com.test.spring_boot_demo.domain.dao.Member;
 import com.test.spring_boot_demo.domain.dto.RegistMemberDto;
 import com.test.spring_boot_demo.domain.dto.UpdateMemberDto;
 
@@ -11,11 +11,11 @@ import com.test.spring_boot_demo.domain.dto.UpdateMemberDto;
 public interface MemberMapper {
     // 전체 유저 조회
     @Select("SELECT * FROM member")
-    List<MemberDao> getMemberList();
+    List<Member> getMemberList();
 
     // 특정 유저 조회
     @Select("SELECT * FROM member WHERE id=#{id}")
-    MemberDao getMember(@Param("id") Long id);
+    Member getMember(@Param("id") Long id);
 
     // 유저 추가
     @Insert(
